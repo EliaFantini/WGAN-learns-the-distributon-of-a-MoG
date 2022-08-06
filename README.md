@@ -69,7 +69,7 @@ python train.py
 
 - **train.py**: main code to run the training and create the result's GIF
 
-- **movie.gif**: ouput of the train.py function (using spectral norm)
+- **movie.gif**: ouput of the train.py function (using weight clipping)
 
 - **Answers.pdf**: pdf with the answers and plots to the assignment of the course
 
