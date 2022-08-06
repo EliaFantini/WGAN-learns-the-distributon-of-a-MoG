@@ -10,31 +10,29 @@
   <img alt="GitHub star" src="https://img.shields.io/github/stars/EliaFantini/WGAN-learns-the-distributon-of-a-MoG?style=social">
 </p>
 
-![⚙️WGAN_for_MoG (1)](https://user-images.githubusercontent.com/62103572/183247440-dca3f048-a89f-4c01-a0e5-63637191e061.png)
 
 Implementation of a Wasserstein Generative Adversarial Network that learns the distribution of a Mixture of Gaussian. The WGAN loss is Lipschitz constrained, so to enforces the constraint I implemented and tested two possible methods: weight clipping and Spectral Normalization. Since the
 state-of-the-art GAN training is computationally expensive, this project will use a simple GAN with a linear generator and a dual variable.
+
 
 For a more detailed explanation of the terms mentioned above, please read *Exercise instructions.pdf*, it contains also some theoretical questions answered in *Answers.pdf* (handwritten). 
 
 The project was part of an assignment for the EPFL course [EE-556 Mathematics of data: from theory to computation](https://edu.epfl.ch/coursebook/en/mathematics-of-data-from-theory-to-computation-EE-556). The backbone of the code structure to run the experiments was already given by the professor and his assistants, what I had to do was to implement the core of the optimization steps, which are the FO and proximal methods algorithms and other minor components. Hence, every code file is a combination of my personal code and the code that was given us by the professor.
 
-The following GIFs shows the output of the code **train.py**. The first one is obtained by using the weight clipping to enforce a Lipschitz constraint, while the second one is the result of using Spectral Normalization. 
+The following GIFs shows the output of the code **train.py**. The first one (left) is obtained by using the weight clipping to enforce a Lipschitz constraint, while the second one (right) is the result of using Spectral Normalization. 
 
 <p align="center">
-<img width="500" alt="Immagine 2022-08-05 155002" src="https://user-images.githubusercontent.com/62103572/183244639-4fc62501-f0e9-468a-b641-b44e4d47883e.png">
-<img width="500" alt="Immagine 2022-08-05 155002" src="https://user-images.githubusercontent.com/62103572/183244641-680a9f9b-a628-4720-9b27-adc77ed65966.png">
-<img width="500" alt="Immagine 2022-08-05 155002" src="https://user-images.githubusercontent.com/62103572/183244643-11126344-87b5-473b-aa7c-aa6fbb51b745.png">
+  <img alt="weight clipping" src="https://user-images.githubusercontent.com/62103572/183261924-41a9eed6-808e-4617-a4bc-f3ab1791083e.gif">
+  <img alt="spectral normalization" src="https://user-images.githubusercontent.com/62103572/183261653-d9bf0d00-1b4d-4417-b532-45a71729927d.gif">
 </p>
 
 
-The following image shows an example of the output figures of the code **run_theoretical_vs_emprical_conv_rate.py**. It's a comparison between the theoretical upper bound of the optimization method and the actual empirical convergence rate.
-
-<p align="center">
-<img width="500" alt="Immagine 2022-08-05 155002" src="https://user-images.githubusercontent.com/62103572/183244791-7524be62-8955-48b6-9fae-94c4d11f818c.png">
-<img width="500" alt="Immagine 2022-08-05 155002" src="https://user-images.githubusercontent.com/62103572/183244792-bd8fe301-b6cd-4814-9333-be2edc364bcc.png">
-</p>
-
+From those results, we can see how with both techniques the noise (red points) tends to have the same distribution as real 
+data (blue points) and they keep oscillating between a less precise solution and a more accurate one. Using 
+spectral normalization makes the noise achieve a similar distribution to the real data one after 600 iterations, 
+while weight clipping is faster and achieves it after about 300 iterations. Spectral normalization does also get 
+worse after 800 iterations and then gets back to a good distribution after 1000, whereas weight clipping 
+maintains a more constant result.
 
 ## Author
 -  [Elia Fantini](https://github.com/EliaFantini)
@@ -67,18 +65,18 @@ python train.py
 
 ## Files description
 
-- **code/src/** : folder conatining all the sub-components useful for the training
+- **code/src/** : folder containing all the sub-components useful for the training
 
 - **train.py**: main code to run the training and create the result's GIF
 
-- **movie.gif**: ouput of the train.py function
+- **movie.gif**: ouput of the train.py function (using spectral norm)
 
 - **Answers.pdf**: pdf with the answers and plots to the assignment of the course
 
 - **Exercise instructions.py**: pdf with the questions of the assignment of the course
 
 ## 🛠 Skills
-Python, Pytorch, Matplotlib. Machine learning, Wasserstein Generative Adversarial Network (WGAN) implementation, minimax problems, implentation of both weights clipping and Spectral Normalization for Lipschitz constrained minimization.
+Python, Pytorch, Matplotlib. Machine learning, Wasserstein Generative Adversarial Network (WGAN) implementation, minimax problems, implementation of both weights clipping and Spectral Normalization for Lipschitz constrained minimization.
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/EliaFantini/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/-elia-fantini/)
