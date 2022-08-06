@@ -22,17 +22,12 @@ The project was part of an assignment for the EPFL course [EE-556 Mathematics of
 The following GIFs shows the output of the code **train.py**. The first one (left) is obtained by using the weight clipping to enforce a Lipschitz constraint, while the second one (right) is the result of using Spectral Normalization. 
 
 <p align="center">
-  <img alt="weight clipping" src="https://user-images.githubusercontent.com/62103572/183261924-41a9eed6-808e-4617-a4bc-f3ab1791083e.gif">
-  <img alt="spectral normalization" src="https://user-images.githubusercontent.com/62103572/183261653-d9bf0d00-1b4d-4417-b532-45a71729927d.gif">
+  <img width="300" alt="weight clipping" src="https://user-images.githubusercontent.com/62103572/183261924-41a9eed6-808e-4617-a4bc-f3ab1791083e.gif">
+  <img width="300" alt="spectral normalization" src="https://user-images.githubusercontent.com/62103572/183261653-d9bf0d00-1b4d-4417-b532-45a71729927d.gif">
 </p>
 
 
-From those results, we can see how with both techniques the noise (red points) tends to have the same distribution as real 
-data (blue points) and they keep oscillating between a less precise solution and a more accurate one. Using 
-spectral normalization makes the noise achieve a similar distribution to the real data one after 600 iterations, 
-while weight clipping is faster and achieves it after about 300 iterations. Spectral normalization does also get 
-worse after 800 iterations and then gets back to a good distribution after 1000, whereas weight clipping 
-maintains a more constant result.
+From those results, we can see how with both techniques the noise (red points) tends to have the same distribution as real data (blue points) and they keep oscillating between a less precise solution and a more accurate one. Using spectral normalization makes the noise achieve a similar distribution to the real data one after 600 iterations, while weight clipping is faster and achieves it after about 300 iterations. Spectral normalization does also get worse after 800 iterations and then gets back to a good distribution after 1000, whereas weight clipping maintains a more constant result.
 
 ## Author
 -  [Elia Fantini](https://github.com/EliaFantini)
@@ -67,9 +62,9 @@ python train.py
 
 - **code/src/** : folder containing all the sub-components useful for the training
 
-- **train.py**: main code to run the training and create the result's GIF
+- **code/train.py**: main code to run the training and create the result's GIF
 
-- **movie.gif**: ouput of the train.py function (using weight clipping)
+- **code/movie.gif**: ouput of the train.py function (using weight clipping)
 
 - **Answers.pdf**: pdf with the answers and plots to the assignment of the course
 
