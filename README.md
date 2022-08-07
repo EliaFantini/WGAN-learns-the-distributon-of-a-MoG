@@ -17,7 +17,7 @@ state-of-the-art GAN training is computationally expensive, this project will us
 
 For a more detailed explanation of the terms mentioned above, please read *Exercise instructions.pdf*, it contains also some theoretical questions answered in *Answers.pdf* (handwritten). 
 
-The project was part of an assignment for the EPFL course [EE-556 Mathematics of data: from theory to computation](https://edu.epfl.ch/coursebook/en/mathematics-of-data-from-theory-to-computation-EE-556). The backbone of the code structure to run the experiments was already given by the professor and his assistants, what I had to do was to implement the core of the optimization steps, which are the FO and proximal methods algorithms and other minor components. Hence, every code file is a combination of my personal code and the code that was given us by the professor.
+The project was part of an assignment for the EPFL course [EE-556 Mathematics of data: from theory to computation](https://edu.epfl.ch/coursebook/en/mathematics-of-data-from-theory-to-computation-EE-556). The backbone of the code structure to run the experiments was already given by the professor and his assistants, what I had to do was to implement the core theoretical concepts to actually make the experiments work. Hence, every code file is a combination of my personal code and the code that was given us by the professor.
 
 The following GIFs shows the output of the code **train.py**. The first one (left) is obtained by using the weight clipping to enforce a Lipschitz constraint, while the second one (right) is the result of using Spectral Normalization. 
 
